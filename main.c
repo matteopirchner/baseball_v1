@@ -4,13 +4,13 @@
 
 int main()
 {
-    float const g = 9.81;
-    float v, a, t, vs, ar;
+    float const G = 9.81;
+    float v, a, t;
     float w, h;
     char c;
 
     printf("-------------------------------------------------\n");
-    printf("|             Baseball simulation               |\n");
+    printf("|         Baseball simulation v.1               |\n");
     printf("|        Made by Matteo Pirchner-Gratz          |\n");
     printf("-------------------------------------------------\n\n");
 
@@ -38,12 +38,12 @@ int main()
     fflush(stdin);
 
     if(c == 'y'){
-        vs = v / 3,6;
-        ar = a * M_PI / 180;
-        h = vs * t * sin(ar) - (t * t * g / 2);
+        v = v / 3.6;
+        a = a * M_PI / 180;
+        h = v * t * sin(a) - (t * t * G / 2);
 
         if(h > 0){
-            w = vs * t * cos(ar);
+            w = v * t * cos(a);
             printf("\nThe Ball flew %.2f meters.", w);
             if(h > 0){
                 printf("\nThe Ball's height is %.2f meters.\n\n", h);
@@ -57,7 +57,7 @@ int main()
             }
         }
         else{
-            w = vs * (2 * (sin(ar) * vs) / g) * cos(ar);
+            w = v * (2 * (sin(a) * v) / G) * cos(a);
             printf("\nThe Ball flew %.2f meters.", w);
             if(h > 0){
                 printf("\nThe Ball's height is %.2f meters.\n\n", h);
@@ -73,12 +73,12 @@ int main()
 
     }
     else if(c == 'Y'){
-        vs = v / 3,6;
-        ar = a * M_PI / 180;
-        h = vs * t * sin(ar) - (t * t * g / 2);
+        v = v / 3.6;
+        a = a * M_PI / 180;
+        h = v * t * sin(a) - (t * t * G / 2);
 
         if(h > 0){
-            w = vs * t * cos(ar);
+            w = v * t * cos(a);
             printf("\nThe Ball flew %.2f meters.", w);
             if(h > 0){
                 printf("\nThe Ball's height is %.2f meters.\n\n", h);
@@ -92,7 +92,7 @@ int main()
             }
         }
         else{
-            w = vs * (2 * (sin(ar) * vs) / g) * cos(ar);
+            w = v * (2 * (sin(a) * v) / G) * cos(a);
             printf("\nThe Ball flew %.2f meters.", w);
 
             if(h > 0){
